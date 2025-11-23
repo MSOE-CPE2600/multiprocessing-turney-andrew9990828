@@ -1,12 +1,13 @@
 CC=gcc
 CFLAGS=-c -Wall -g
-LDFLAGS=-ljpeg
-MOVIE_LDFLAGS=-lm
+
+# Add pthread support here
+LDFLAGS=-ljpeg -lpthread
+MOVIE_LDFLAGS=-lm -lpthread
 
 SOURCES= mandel.c jpegrw.c 
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=mandel
-
 
 MOVIE_SRC=mandelmovie.c
 MOVIE_OBJ=mandelmovie.o
